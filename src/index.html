@@ -13,15 +13,21 @@
     <li><a href="example.html">Example</a></li>
     <li><a href="pagination.html">Pagination</a></li>
   </ul>
+<div class="container">
+  <select class="breed-select unvisible" id="select-class">
+    <option value="" selected="selected" disabled="disabled">
+      Select a cat,please!
+    </option>
+  </select>
 
-  <select class="breed-select"></select>
-  <!-- <div class="loader"></div> -->
 
-  <p class="loader"></p>
-  <p class="error">Oops! Something went wrong! Try reloading the page!</p>
+  <p class="loader unvisible" unvisible></p>
+  <p class="error unvisible">Oops! Something went wrong! Try reloading the page!</p>
   <div class="cat-info"></div>
+</div>
+ 
 
-  <script src="index.js" type="module"></script>
+  <script src="./index.js" type="module"></script>
 </body>
 
 </html>
