@@ -20,7 +20,7 @@ function onSearch(e) {
 
     newsApiService.query = e.currentTarget.elements.query.value;
 
-    if(newsApiService.query === '') {
+    if (newsApiService.query === '') {
         return alert('Введите запрос!')
     };
 
@@ -38,22 +38,21 @@ function onLoadBtn() {
 function clearArticlesContainer() {
     container.innerHTML = '';
 }
-// function addArticlesContainerMurkup(articles) {
-//     const murkup = articles.map((article) => {
-//         return `
-//         <li>
-//         <a href='${article.url}'>
-//         <article>
-//         <img src='${article.urlToImage}' alt='' width='480'>
-//         <h2>${article.title}</h2>
-//         <p>Posted by: ${article.author}</p>
-//         <p>${article.description}</p>
-//         </article>
-//         </a>
-//         </li>`
-        
-//     }).join('');
-    
-//     container.insertAdjacentHTML('beforeend', murkup);
-//     }
-    
+function addArticlesContainerMurkup(articles) {
+    const murkup = articles.map((article) => {
+        return `
+        <li>
+        <a href='${article.url}'>
+        <article>
+        <img src='${article.urlToImage}' alt='' width='480'>
+        <h2>${article.title}</h2>
+        <p>Posted by: ${article.author}</p>
+        <p>${article.description}</p>
+        </article>
+        </a>
+        </li>`
+
+    }).join('');
+
+    container.insertAdjacentHTML('beforeend', murkup);
+}
