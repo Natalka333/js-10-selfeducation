@@ -1,43 +1,43 @@
-// import './css/common.css'
-// import NewsApiService from './API-service';
+import './css/common.css'
+import NewsApiService from './API-service';
 
-// const formEl = document.querySelector('.form-js');
-// const btnLoad = document.querySelector('.btn-load');
-// const container = document.querySelector('.article-container');
-
-
-// const newsApiService = new NewsApiService();
-// console.log(newsApiService)
-
-// formEl.addEventListener('submit', onSearch);
-// btnLoad.addEventListener('click', onLoadBtn)
+const formEl = document.querySelector('.form-js');
+const btnLoad = document.querySelector('.btn-load');
+const container = document.querySelector('.article-container');
 
 
-// function onSearch(e) {
-//     e.preventDefault();
+const newsApiService = new NewsApiService();
+console.log(newsApiService)
 
-//     clearArticlesContainer();
-
-//     newsApiService.query = e.currentTarget.elements.query.value;
-
-//     if(newsApiService.query === '') {
-//         return alert('Введите запрос!')
-//     };
-
-//     // console.log(searchQuery);
-//     newsApiService.resetPage();
-//     newsApiService.fetchArticles().then(articles => console.log(articles));
-
-// };
-
-// function onLoadBtn() {
-//     newsApiService.fetchArticles().then(articles => console.log(articles));
-// };
+formEl.addEventListener('submit', onSearch);
+btnLoad.addEventListener('click', onLoadBtn)
 
 
-// function clearArticlesContainer() {
-//     container.innerHTML = '';
-// }
+function onSearch(e) {
+    e.preventDefault();
+
+    clearArticlesContainer();
+
+    newsApiService.query = e.currentTarget.elements.query.value;
+
+    if(newsApiService.query === '') {
+        return alert('Введите запрос!')
+    };
+
+    // console.log(searchQuery);
+    newsApiService.resetPage();
+    newsApiService.fetchArticles().then(articles => console.log(articles));
+
+};
+
+function onLoadBtn() {
+    newsApiService.fetchArticles().then(articles => console.log(articles));
+};
+
+
+function clearArticlesContainer() {
+    container.innerHTML = '';
+}
 // function addArticlesContainerMurkup(articles) {
 //     const murkup = articles.map((article) => {
 //         return `
